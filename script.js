@@ -254,3 +254,118 @@ input.addEventListener("focus", () => {
       }
     });
   
+
+
+//updated js code here
+
+
+
+  function updateCount(id, max) {
+    const textarea = document.getElementById(id);
+    const count = textarea.value.length;
+    document.getElementById(id + 'Count').textContent = `${count} / ${max}`;
+
+    // Hide error while typing
+    document.getElementById("descriptionError").style.display = "none";
+  }
+
+  function validateDescription() {
+    const desc = document.getElementById("description").value.trim();
+    const errorDiv = document.getElementById("descriptionError");
+    const hintDiv = document.getElementById("descriptionHint");
+
+    if (desc.length < 10) {
+      errorDiv.style.display = "block";  // Show error
+      hintDiv.style.display = "none";    // Hide helper text
+    } else {
+      errorDiv.style.display = "none";   // Hide error
+      hintDiv.style.display = "block";   // Show helper text again
+    }
+  }
+
+
+  
+
+  const priceField = document.getElementById("price");
+  
+  // Prevent non-digit characters on keypress
+  priceField.addEventListener("keypress", function (e) {
+    if (!/^\d$/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Prevent non-digit characters on paste
+  priceField.addEventListener("paste", function (e) {
+    const paste = e.clipboardData.getData("text");
+    if (!/^\d+$/.test(paste)) {
+      e.preventDefault();
+    }
+  });
+
+  // Optional: Remove anything non-digit if user bypasses with drag/drop etc.
+  priceField.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+  });
+
+
+
+function showTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+
+  if (tabId === 'current') {
+    getLocation();
+  }
+}
+
+function getLocation() {
+  const status = document.getElementById("locationStatus");
+
+  if (!navigator.geolocation) {
+    status.textContent = "Geolocation is not supported by your browser.";
+    return;
+  }
+
+  status.textContent = "🔍 Getting your location...";
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      status.textContent = `📍 Your location: Latitude ${lat.toFixed(4)}, Longitude ${lon.toFixed(4)}`;
+    },
+    (error) => {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          status.textContent = "❌ Location access denied.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          status.textContent = "❌ Location info is unavailable.";
+          break;
+        case error.TIMEOUT:
+          status.textContent = "⏱️ Location request timed out.";
+          break;
+        default:
+          status.textContent = "❌ An unknown error occurred.";
+      }
+    }
+  );
+}
+
+
+
+
+  function validateName() {
+    const nameField = document.getElementById("name");
+    const errorDiv = document.getElementById("nameError");
+
+    if (nameField.value.trim() === "") {
+      errorDiv.style.display = "block";
+    } else {
+      errorDiv.style.display = "none";
+    }
+  }
+
+
+
