@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post Your Ad for RENT HOUSE</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <div class="container">
+    <h2>POST YOUR AD</h2>
+    <div class="section-title"><div class="section-title" style=" font-weight: bold;"><h3>Selected category</h3></div> <br>
+    <div class="breadcrumb">
+      Properties / For Sale: Houses & Apartments <a href="https://www.olx.in/" target="_blank" style="text-decoration: underline;">Change</a>
+    </div>
+<hr>
+    <h1 class="section-title" style=" font-weight: bold;">INCLUDE SOME DETAILS</h1>
+
+    <div class="section-title">Type *</div>
+    <div class="buttons-group" id="property-types">
+      <div class="btn-option">Flats / Apartments</div>
+      <div class="btn-option">Independent / Builder Floors</div>
+      <div class="btn-option">Farm House</div>
+      <div class="btn-option">House & Villa</div>
+    </div>
+
+    <div class="section-title">BHK</div>
+    <div class="buttons-group" id="bhk-options">
+      <div class="btn-option">1</div>
+      <div class="btn-option">2</div>
+      <div class="btn-option">3</div>
+      <div class="btn-option">4</div>
+      <div class="btn-option">4+</div>
+    </div>
+
+    <div class="section-title">Bathrooms</div>
+    <div class="buttons-group" id="bathroom-options">
+      <div class="btn-option">1</div>
+      <div class="btn-option">2</div>
+      <div class="btn-option">3</div>
+      <div class="btn-option">4</div>
+      <div class="btn-option">4+</div>
+    </div>
+
+    <div class="section-title">Furnishing</div>
+    <div class="buttons-group" id="property-typesab">
+      <div class="btn-option">Furnished</div>
+      <div class="btn-option">Semi-Furnished</div>
+      <div class="btn-option">Under-Constructions</div>
+    </div>
+
+
+    <div class="section-title">Project Status</div>
+    <div class="buttons-group" id="property-types1">
+      <div class="btn-option">New Launch</div>
+      <div class="btn-option">Ready To Move</div>
+      <div class="btn-option">UnFurnished</div>
+    </div>
+
+    <div class="section-title">Listed By</div>
+    <div class="buttons-group" id="property-types12">
+      <div class="btn-option">Builder</div>
+      <div class="btn-option">Dealer</div>
+      <div class="btn-option">Owner</div>
+    </div>
+
+
+    <div class="form-field">
+        <label for="superBuiltup">Super Builtup area sqft <span class="required">*</span></label>
+        <input type="text" id="superBuiltup" name="superBuiltup" />
+        <p class="error-msg" id="superBuiltup-error">Super Builtup area sqft is mandatory. Please complete the required field.</p>
+      </div>
+      
+      <div class="form-field">
+        <label for="carpetArea">Carpet Area sqft <span class="required">*</span></label>
+        <input type="text" id="carpetArea" name="carpetArea" />
+        <p class="error-msg" id="carpetArea-error">Carpet Area sqft is mandatory. Please complete the required field.</p>
+      </div>
+      
+
+      <div class="form-field">
+        <label for="carpetArea">Maintenance (Monthly) </label>
+        <input type="text" id="carpetArea" name="carpetArea" />
+      </div>
+
+
+      <div class="form-field">
+        <label for="carpetArea">Total Floors </label>
+        <input type="text" id="carpetArea" name="carpetArea" />
+      </div>
+
+      <div class="form-field">
+        <label for="carpetArea">Floor No </label>
+        <input type="text" id="carpetArea" name="carpetArea" />
+      </div>
+
+
+      <div class="section-title">Car Parking</div>
+      <div class="buttons-group" id="CarParking">
+        <div class="btn-option">0</div>
+        <div class="btn-option">1</div>
+        <div class="btn-option">2</div>
+        <div class="btn-option">3</div>
+        <br>
+        
+      </div>
+
+      <!-- Native select -->
+    <div class="form-group">
+        <label for="state">Facing *</label><br>
+        <select id="state">
+          <option value="">Select a Facing</option>
+          <option value="MH">East</option>
+          <option value="DL">North</option>
+          <option value="KA">North-East</option>
+          <option value="TN">North-West</option>
+        </select>
+        <div id="state-error" class="error">This field is mandatory</div>
+      </div>
+    
+      <!-- Project Name -->
+  <div class="form-section">
+    <label for="projectName">Project Name</label>
+    <div class="field-container">
+      <input type="text" id="projectName" maxlength="70" oninput="updateCount('projectName', 70)">
+      <span id="projectNameCount" class="char-count">0 / 70</span>
+    </div>
+  </div>
+
+ <!-- Ad Title -->
+ <div class="form-section">
+    <label for="adTitle"> <br>   Ad title <span style="color:red">*</span></label>
+    <div class="field-container">
+      <input type="text" id="adTitle" maxlength="70" oninput="validateAdTitle()">
+      <span id="adTitleCount" class="char-count">0 / 70</span>
+    </div>
+    <div id="adTitleError" class="error-message">
+        Mention the key features of your item (e.g. brand, model, age, type)
+    </div>
+  </div>
+ <!-- Description -->
+ <div class="form-section">
+    <label for="description"> <br> Description <span style="color:red">*</span></label>
+    <div class="field-container">
+      <textarea id="description" rows="5" maxlength="4096" oninput="updateCount('description', 4096)" style="width: 50%;"></textarea>
+      <span id="descriptionCount" class="char-count">0 / 4096</span>
+    </div>
+  </div>
+</div>
+<!-- Price Section -->
+<div class="form-section">
+    <h3>SET A PRICE</h3>
+    <label for="price" id="number" class="number">Price*</label><br />
+    <div class="price-input-wrapper">
+      <input type="text" id="price" name="price" placeholder="Enter price" />
+    </div>
+  </div>
+  <br><br>
+<hr>
+  <div class="form-group">
+    <h2>UPLOAD UP TO 20 PHOTOS</h2>
+    <div class="upload-grid" id="uploadGrid"></div>
+  </div>
+ <hr>
+
+
+
+ <h2>CONFIRM YOUR LOCATION</h2>
+ <div class="tabs">
+   <div class="tab active" onclick="showTab('list')">LIST</div>
+   <div class="tab" onclick="showTab('current')">CURRENT LOCATION</div>
+ </div>
+
+ <div id="list" class="tab-content active">
+    <div class="form-group">
+      <label for="state">State *</label><br>
+      <select id="state">
+        <option value="">Select a state</option>
+        <option value="MH">Maharashtra</option>
+        <option value="DL">Delhi</option>
+        <option value="KA">Karnataka</option>
+        <option value="TN">Tamil Nadu</option>
+      </select>
+      <div id="state-error" class="error" style="display: none;">This field is mandatory</div>
+    </div>
+  </div>
+
+  <div id="current" class="tab-content">
+    <p>📍 Location access not implemented in this mockup.</p>
+  </div>
+
+ 
+  <div class="details-section">
+    <h2>REVIEW YOUR DETAILS</h2>
+    <div class="details-container">
+      <div class="image-wrapper">
+        <img id="profile-pic" src="./mukupic.jpg" alt="User">
+        
+        <!-- 📷 Camera Icon -->
+        <label for="file-upload" class="camera-icon">📷</label>
+        <input type="file" id="file-upload" accept="image/*" />
+
+        <!-- Remove Photo Button -->
+        <button id="delete-btn" class="delete-btn" style="display: none;">Remove Photo</button>
+      </div>
+
+      <div class="details-info">
+        <label for="name">Name</label>
+        <input type="text" id="name" value="Mukesh Kumar" style="width: 50%;">
+        <p>Your phone number<br><span class="phone">+91 9467366720</span></p>
+      </div>
+    </div>
+  </div>
+
+<hr>
+<div class="button-wrapper">
+    <button type="submit" class="submit-btn">Post Now</button>
+  </div>
+  
+
+
+  </div>
+<!-- 🌙 Simple Footer -->
+<footer class="simple-footer">
+    <p>Made with ❤️ by Muku <br> &copy; 2025. All rights reserved.</p>
+  </footer>
+  
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
