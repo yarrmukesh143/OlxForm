@@ -8,19 +8,23 @@
  
 </head>
 <body>
+    <br>
+    <h1 style="text-align: center; font-size: 24px;"> <br> POST YOUR AD</h1>
   <div class="container">
-    <h2>POST YOUR AD</h2>
-    <div class="section-title"><div class="section-title" style=" font-weight: bold;"><h3>Selected category</h3></div> <br>
+    <!-- <h2>POST YOUR AD</h2> -->
+    <div class="section-title"><div class="section-title" style=" font-weight: bold;"><h2>Selected category</h2></div> <br>
     <div class="breadcrumb">
-      Properties / For Sale: Houses & Apartments <a href="https://www.olx.in/" target="_blank" style="text-decoration: underline;">Change</a>
+      Properties / For Sale: Houses & Apartments <a href="https://www.olx.in/" target="_blank" >Change</a>
     </div>
 <hr>
+    </div>
+
     <h1 class="section-title" style=" font-weight: bold;">INCLUDE SOME DETAILS</h1>
 
     <div class="section-title">Type *</div>
     <div class="buttons-group" id="property-types">
       <div class="btn-option">Flats / Apartments</div>
-      <div class="btn-option">Independent / Builder Floors</div>
+      <div class="btn-option">Independent / Builder Floors</div> <br><br>
       <div class="btn-option">Farm House</div>
       <div class="btn-option">House & Villa</div>
     </div>
@@ -135,28 +139,48 @@
       <input type="text" id="adTitle" maxlength="70" oninput="validateAdTitle()">
       <span id="adTitleCount" class="char-count">0 / 70</span>
     </div>
-    <div id="adTitleError" class="error-message">
+    <div id="adTitleError" class="error-message" style="color: gray;">
         Mention the key features of your item (e.g. brand, model, age, type)
     </div>
   </div>
- <!-- Description -->
- <div class="form-section">
-    <label for="description"> <br> Description <span style="color:red">*</span></label>
-    <div class="field-container">
-      <textarea id="description" rows="5" maxlength="4096" oninput="updateCount('description', 4096)" style="width: 50%;"></textarea>
-      <span id="descriptionCount" class="char-count">0 / 4096</span>
-    </div>
-  </div>
-</div>
-<!-- Price Section -->
+
+ <!-- Inside the form-section for description -->
 <div class="form-section">
-    <h3>SET A PRICE</h3>
-    <label for="price" id="number" class="number">Price*</label><br />
-    <div class="price-input-wrapper">
-      <input type="text" id="price" name="price" placeholder="Enter price" />
+    <label for="description"><br> Description <span style="color:red">*</span></label>
+    <div class="field-container">
+      <textarea
+        id="description"
+        rows="5"
+        maxlength="4096"
+        oninput="updateCount('description', 4096)"
+        onblur="validateDescription()"
+        style="width: 50%;"
+      ></textarea>
+  
+      <span id="descriptionCount" class="char-count">0 / 4096</span>
+  
+      <!-- Renamed to avoid ID conflict -->
+      <div id="descriptionHint" class="error-message" style="color: gray;">
+        Include condition, features and reason for selling
+      </div>
+  
+      <div id="descriptionError" class="error-message" style="display: none;">
+        A minimum length of 10 characters is required. Please edit the field.
+      </div>
     </div>
   </div>
-  <br><br>
+  
+<!-- Price Section -->
+
+
+  <div class="form-section">
+    <h3>SET A PRICE</h3>
+    <label for="price">Price*</label><br />
+    <div class="price-input-wrapper">
+      <input type="number" id="price" name="price" placeholder="Enter price" / style="width: 70%;">
+    </div>
+  </div>
+  <br>
 <hr>
   <div class="form-group">
     <h2>UPLOAD UP TO 20 PHOTOS</h2>
@@ -173,17 +197,47 @@
  </div>
 
  <div id="list" class="tab-content active">
-    <div class="form-group">
-      <label for="state">State *</label><br>
-      <select id="state">
-        <option value="">Select a state</option>
-        <option value="MH">Maharashtra</option>
-        <option value="DL">Delhi</option>
-        <option value="KA">Karnataka</option>
-        <option value="TN">Tamil Nadu</option>
-      </select>
-      <div id="state-error" class="error" style="display: none;">This field is mandatory</div>
-    </div>
+    <label for="state">Select State *</label><br>
+    <select id="state" name="state" required>
+      <option value="">-- Select a State --</option>
+      <option value="AN">Andaman and Nicobar Islands</option>
+      <option value="AP">Andhra Pradesh</option>
+      <option value="AR">Arunachal Pradesh</option>
+      <option value="AS">Assam</option>
+      <option value="BR">Bihar</option>
+      <option value="CH">Chandigarh</option>
+      <option value="CT">Chhattisgarh</option>
+      <option value="DN">Dadra and Nagar Haveli and Daman and Diu</option>
+      <option value="DL">Delhi</option>
+      <option value="GA">Goa</option>
+      <option value="GJ">Gujarat</option>
+      <option value="HR">Haryana</option>
+      <option value="HP">Himachal Pradesh</option>
+      <option value="JK">Jammu and Kashmir</option>
+      <option value="JH">Jharkhand</option>
+      <option value="KA">Karnataka</option>
+      <option value="KL">Kerala</option>
+      <option value="LA">Ladakh</option>
+      <option value="LD">Lakshadweep</option>
+      <option value="MP">Madhya Pradesh</option>
+      <option value="MH">Maharashtra</option>
+      <option value="MN">Manipur</option>
+      <option value="ML">Meghalaya</option>
+      <option value="MZ">Mizoram</option>
+      <option value="NL">Nagaland</option>
+      <option value="OD">Odisha</option>
+      <option value="PY">Puducherry</option>
+      <option value="PB">Punjab</option>
+      <option value="RJ">Rajasthan</option>
+      <option value="SK">Sikkim</option>
+      <option value="TN">Tamil Nadu</option>
+      <option value="TS">Telangana</option>
+      <option value="TR">Tripura</option>
+      <option value="UP">Uttar Pradesh</option>
+      <option value="UK">Uttarakhand</option>
+      <option value="WB">West Bengal</option>
+    </select>
+    
   </div>
 
   <div id="current" class="tab-content">
@@ -206,10 +260,17 @@
       </div>
 
       <div class="details-info">
-        <label for="name">Name</label>
-        <input type="text" id="name" value="Mukesh Kumar" style="width: 50%;">
+        <label for="name">Name <span style="color:red">*</span></label>
+        <input type="text" id="name" value="Mukesh Kumar" style="width: 50%;" onblur="validateName()">
+       
+        
+        <!-- Error message -->
+        <div id="nameError" class="error-message" style="display: none; color: red; font-size: 0.9em;">
+          Name is required.
+        </div>
         <p>Your phone number<br><span class="phone">+91 9467366720</span></p>
       </div>
+      
     </div>
   </div>
 
@@ -219,8 +280,13 @@
   </div>
   
 
+    
+
+
+
 
   </div>
+  <hr>
 <!-- 🌙 Simple Footer -->
 <footer class="simple-footer">
     <p>Made with ❤️ by Muku <br> &copy; 2025. All rights reserved.</p>
