@@ -276,9 +276,15 @@
 
 <hr>
 <div class="button-wrapper">
-    <button type="submit" class="submit-btn">Post Now</button>
+    <button type="submit" class="submit-btn"  id="submitBtn">Post Now</button>
   </div>
   
+<script>
+  document.getElementById("submitBtn").addEventListener("click", function(event) {
+    event.preventDefault(); // stop actual form submission if there's a form tag
+    alert("Your ad has been submitted successfully! 🎉");
+  });
+</script>
 
     
 
